@@ -1,0 +1,19 @@
+#header{
+    padding: 16px 0;
+}
+
+.row .col h2{
+    margin-top: 32px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+#form{
+    margin: 32px;
+}
+
+.form-field{
+    margin: 8px 0;
+}
