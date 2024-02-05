@@ -2,6 +2,10 @@
     padding: 16px 0;
 }
 
+h1{
+    font-size: 12px;
+}
+
 .row .col h2{
     margin-top: 32px;
 }
@@ -16,4 +20,13 @@ h2{
 
 .form-field{
     margin: 8px 0;
+}
+
+.phone-question{
+    padding: 4px 16px;
+}
+
+.error{
+    display: block;
+    color: red;
 }
