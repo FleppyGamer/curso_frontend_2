@@ -8,9 +8,25 @@
     left: $start;
 }
 
+@mixin list-and-menus($color: variables.$secondary-color){
+    color: variables.$secondary-color;
+    text-align: center;
+    text-decoration: none;
+}
+
+@mixin grid-template($grid-template-columns: repeat(3, 32.66%), $col-gap: 1%, $row-gap: 4% ){
+    display: grid;
+    grid-template-columns: $grid-template-columns;
+    column-gap: $col-gap;
+    row-gap: $row-gap;
+    width: 100%;
+}
+
 @function pixel-to-em($pixel, $st-font-size: 16px){
     @return math.div($pixel, $st-font-size) + em;
 }
+
+$product-btn: 8px;
 
 body {
     background-color: variables.$body-bg-color;
@@ -29,27 +45,26 @@ li {
 header {
     background-color: variables.$header-bg-color;
     @include sticky();
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: pixel-to-em(16px) 0;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: pixel-to-em(16px) 0;
+    }
 }
 
 .menu {
     display: flex;
-}
 
-.menu li {
-    font-weight: bold;
-    margin-left: pixel-to-em(24px);
-}
+    li {
+        font-weight: bold;
+        margin-left: pixel-to-em(24px);
+    }    
 
-.menu li a {
-    color: variables.$secondary-color;
-    text-decoration: none;
+    li a {
+        @include list-and-menus();
+    }
 }
 
 section {
@@ -57,46 +72,40 @@ section {
 }
 
 .products {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 32.66%);
-    column-gap: 1%;
-    row-gap: 4%;
-    width: 100%;
-}
+    margin-top: pixel-to-em(40px);
+    @include grid-template();
 
-.product-item img {
-    width: 100%;
-    border-radius: 16px;
+    img {
+        width: 100%;
+        border-radius: calc($product-btn*2);
+    }
 }
 
 .product-button {
+    @include list-and-menus();
+    
     display: block;
-    background-color: #44bd32;
-    color: #fff;
-    text-align: center;
-    padding: 8px 0;
-    border-radius: 8px;
-    margin-top: 8px;
-    text-decoration: none;
+    background-color: variables.$button-bg-color;
+    padding: $product-btn 0;
+    border-radius: $product-btn;
+    margin-top: $product-btn;
+
+    &:hover {
+        background-color: variables.$button-lgt-color;
+    }
 }
 
-.product-button:hover {
-    background-color: #4cd137;
-}
-
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: variables.$tablet)  {
     .container {
         max-width: 80%;
     }
 
     .products {
-        grid-template-columns: repeat(2, 48.5%);
-        column-gap: 3%;
+        @include grid-template(repeat(2, 48.5%), 3%);
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: variables.$mobile) {
     .products {
         display: block;
     }
