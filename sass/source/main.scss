@@ -1,4 +1,11 @@
 @use 'reset';
-@use 'sass:math'
+@use 'variables'
+@use 'sass:math';
 
-@function
+@function pixel-to-em($pixel, $st-font-size: 16px){
+    @return math.div($pixel, $st-font-size) + em;
+}
+
+body {
+    background-color: #f5f6fa;
+}
