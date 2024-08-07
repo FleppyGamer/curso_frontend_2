@@ -1,0 +1,114 @@
+@use 'reset';
+@use 'variables';
+@use 'sass:math';
+
+
+@function pixel-to-em ($fontSize, $contextFontSize: 16px) {
+    @return math.div($fontSize, $contextFontSize)+em;
+}
+
+@mixin form ($height: calc(100vh - 79px - 51px)){
+    height: $height;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin p-18 (){
+    font-size: pixel-to-em(18px);
+    padding: 8px;
+}
+
+@mixin text-center (){
+    text-align: center;
+}
+
+@mixin header-footer-bg-color (){
+    background-color: variables.$primary-color;
+}
+
+
+body{
+    background-color: variables.$background-color;
+}
+
+.container{
+    max-width: 1024px;
+    margin: auto;
+    padding: 16px;
+}
+
+header{
+    @include header-footer-bg-color ();
+    h1{
+        @include text-center();
+        color: variables.$dertiary-color;
+    }
+}
+
+.form-container{
+    @include form();
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        @include text-center();
+        font-size: pixel-to-em(36px);
+    }
+
+    .form-field{
+        display: flex;
+    flex-direction: column;
+    width: 480px;
+    margin-top: 24px;
+
+        label{
+            margin-bottom: 4px;
+        }
+
+        input{
+            &, button{
+                    background-color: transparent;
+                    font-size: pixel-to-em(18px);
+                    padding: 18px auto;
+                    border: 0;
+                    cursor: pointer;
+                }
+
+            &{
+                border-bottom: 3px solid variables.$secondary-color;
+            }
+        }
+
+        button{
+            @include p-18();
+            background-color: variables.$primary-color;
+            color: variables.$dertiary-color;
+            border: none;
+            border-radius: 5px;
+
+            &:hover{
+                background-color: lighten(variables.$primary-color, 10%);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+footer{
+    @include header-footer-bg-color ();
+    @include text-center();
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    color: variables.$dertiary-color;
+}
+
+@media screen and (max-width:variables.$mobile) {
+    .container{
+        max-width: 80%;
+    }
+    .form-container{
+        max-width: 80%;
+    }
+}
