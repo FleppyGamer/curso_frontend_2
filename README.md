@@ -5,3 +5,4 @@ After lots of work the project is finally done and it's really easy to be instal
 
 ## How to Install
 To install, clone all the code here available to your machine, open the cmd terminal in your code software and type "npm install"... Easy!  
+> To run the code and get the build (compressed) files, type in the cmd of your code software: "npm run gulp".
