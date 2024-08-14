@@ -1,5 +1,7 @@
-# Exercicio SASS
+# Exercicio Gulp
 ## About
-This is an exercise made for EBAC's HTML course I'm taking part on where we'd put our SASS knowledges into action by converting the css file from the website to scss.
-I hope you like it :3
-> Check the [defunct css] folder to compare the previously and the currently used codes for the project's CSS!
+Hello! This is a little project that I did for the HTML course I'm taking part in. In this project I automatized many processes using Gulp, like code and image compression!
+After lots of work the project is finally done and it's really easy to be installed!  
+
+## How to Install
+To install, clone all the code here available to your machine, open the cmd terminal in your code software and type "npm install"... Easy!  
