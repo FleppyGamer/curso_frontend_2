@@ -2,9 +2,8 @@
 @use 'variables';
 @use 'sass:math';
 
-
 @function pixel-to-em ($fontSize, $contextFontSize: 16px) {
-    @return math.div($fontSize, $contextFontSize)+em;
+    @return math.div($fontSize, $contextFontSize) + em;
 }
 
 @mixin form ($height: calc(100vh - 79px - 51px)){
@@ -60,7 +59,7 @@ header{
     flex-direction: column;
     width: 480px;
     margin-top: 24px;
-
+        
         label{
             margin-bottom: 4px;
         }
