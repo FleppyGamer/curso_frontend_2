@@ -1,8 +1,5 @@
-# Exercicio Gulp
-## About
-Hello! This is a little project that I did for the HTML course I'm taking part in. In this project I automatized many processes using Gulp, like code and image compression!
-After lots of work the project is finally done and it's really easy to be installed!  
+# LESS Exercise
 
-## How to Install
-To install, clone all the code here available to your machine, open the cmd terminal in your code software and type "npm install"... Easy!  
-> To run the code and get the build (compressed) files, type in the cmd of your code software: "npm run gulp".
+## About
+
+In this exercise I did for the HTML course I'm taking part, I had to convert CSS files to LESS, using all the tools I learned during the classes.
